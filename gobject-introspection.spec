@@ -4,15 +4,15 @@
 #
 Name     : gobject-introspection
 Version  : 1.52.0
-Release  : 6
+Release  : 7
 URL      : https://github.com/GNOME/gobject-introspection/archive/1.52.0.tar.gz
 Source0  : https://github.com/GNOME/gobject-introspection/archive/1.52.0.tar.gz
 Summary  : GObject Introspection
 Group    : Development/Tools
 License  : GPL-2.0 LGPL-2.0
 Requires: gobject-introspection-bin
-Requires: gobject-introspection-lib
 Requires: gobject-introspection-data
+Requires: gobject-introspection-lib
 Requires: gobject-introspection-doc
 BuildRequires : Mako
 BuildRequires : bison
@@ -90,7 +90,7 @@ lib components for the gobject-introspection package.
 
 %build
 export LANG=C
-export SOURCE_DATE_EPOCH=1490629002
+export SOURCE_DATE_EPOCH=1491317952
 %autogen --disable-static
 make V=1  %{?_smp_mflags}
 
@@ -102,7 +102,7 @@ export no_proxy=localhost
 make VERBOSE=1 V=1 %{?_smp_mflags} check
 
 %install
-export SOURCE_DATE_EPOCH=1490629002
+export SOURCE_DATE_EPOCH=1491317952
 rm -rf %{buildroot}
 %make_install
 
@@ -120,6 +120,24 @@ rm -rf %{buildroot}
 
 %files data
 %defattr(-,root,root,-)
+/usr/lib64/girepository-1.0/DBus-1.0.typelib
+/usr/lib64/girepository-1.0/DBusGLib-1.0.typelib
+/usr/lib64/girepository-1.0/GIRepository-2.0.typelib
+/usr/lib64/girepository-1.0/GL-1.0.typelib
+/usr/lib64/girepository-1.0/GLib-2.0.typelib
+/usr/lib64/girepository-1.0/GModule-2.0.typelib
+/usr/lib64/girepository-1.0/GObject-2.0.typelib
+/usr/lib64/girepository-1.0/Gio-2.0.typelib
+/usr/lib64/girepository-1.0/cairo-1.0.typelib
+/usr/lib64/girepository-1.0/fontconfig-2.0.typelib
+/usr/lib64/girepository-1.0/freetype2-2.0.typelib
+/usr/lib64/girepository-1.0/libxml2-2.0.typelib
+/usr/lib64/girepository-1.0/win32-1.0.typelib
+/usr/lib64/girepository-1.0/xfixes-4.0.typelib
+/usr/lib64/girepository-1.0/xft-2.0.typelib
+/usr/lib64/girepository-1.0/xlib-2.0.typelib
+/usr/lib64/girepository-1.0/xrandr-1.3.typelib
+/usr/share/gir-1.0/*.gir
 /usr/share/gobject-introspection-1.0/Makefile.introspection
 /usr/share/gobject-introspection-1.0/gdump.c
 /usr/share/gobject-introspection-1.0/tests/annotation.c
@@ -163,28 +181,10 @@ rm -rf %{buildroot}
 /usr/include/gobject-introspection-1.0/giunioninfo.h
 /usr/include/gobject-introspection-1.0/giversionmacros.h
 /usr/include/gobject-introspection-1.0/givfuncinfo.h
-/usr/lib64/girepository-1.0/DBus-1.0.typelib
-/usr/lib64/girepository-1.0/DBusGLib-1.0.typelib
-/usr/lib64/girepository-1.0/GIRepository-2.0.typelib
-/usr/lib64/girepository-1.0/GL-1.0.typelib
-/usr/lib64/girepository-1.0/GLib-2.0.typelib
-/usr/lib64/girepository-1.0/GModule-2.0.typelib
-/usr/lib64/girepository-1.0/GObject-2.0.typelib
-/usr/lib64/girepository-1.0/Gio-2.0.typelib
-/usr/lib64/girepository-1.0/cairo-1.0.typelib
-/usr/lib64/girepository-1.0/fontconfig-2.0.typelib
-/usr/lib64/girepository-1.0/freetype2-2.0.typelib
-/usr/lib64/girepository-1.0/libxml2-2.0.typelib
-/usr/lib64/girepository-1.0/win32-1.0.typelib
-/usr/lib64/girepository-1.0/xfixes-4.0.typelib
-/usr/lib64/girepository-1.0/xft-2.0.typelib
-/usr/lib64/girepository-1.0/xlib-2.0.typelib
-/usr/lib64/girepository-1.0/xrandr-1.3.typelib
 /usr/lib64/libgirepository-1.0.so
 /usr/lib64/pkgconfig/gobject-introspection-1.0.pc
 /usr/lib64/pkgconfig/gobject-introspection-no-export-1.0.pc
 /usr/share/aclocal/*.m4
-/usr/share/gir-1.0/*.gir
 
 %files doc
 %defattr(-,root,root,-)

@@ -4,7 +4,7 @@
 #
 Name     : gobject-introspection
 Version  : 1.52.1
-Release  : 8
+Release  : 9
 URL      : https://github.com/GNOME/gobject-introspection/archive/1.52.1.tar.gz
 Source0  : https://github.com/GNOME/gobject-introspection/archive/1.52.1.tar.gz
 Summary  : GObject Introspection
@@ -90,7 +90,11 @@ lib components for the gobject-introspection package.
 
 %build
 export LANG=C
-export SOURCE_DATE_EPOCH=1491872123
+export SOURCE_DATE_EPOCH=1492204720
+export CFLAGS="$CFLAGS -O3 -falign-functions=32 -fno-semantic-interposition "
+export FCFLAGS="$CFLAGS -O3 -falign-functions=32 -fno-semantic-interposition "
+export FFLAGS="$CFLAGS -O3 -falign-functions=32 -fno-semantic-interposition "
+export CXXFLAGS="$CXXFLAGS -O3 -falign-functions=32 -fno-semantic-interposition "
 %autogen --disable-static
 make V=1  %{?_smp_mflags}
 
@@ -102,7 +106,7 @@ export no_proxy=localhost
 make VERBOSE=1 V=1 %{?_smp_mflags} check
 
 %install
-export SOURCE_DATE_EPOCH=1491872123
+export SOURCE_DATE_EPOCH=1492204720
 rm -rf %{buildroot}
 %make_install
 

@@ -4,5 +4,5 @@ flex
 bison
 glib-dev
 python-dev
-libc-bin
+glibc-bin
 Mako

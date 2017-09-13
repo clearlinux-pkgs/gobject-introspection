@@ -4,7 +4,7 @@
 #
 Name     : gobject-introspection
 Version  : 1.54.0
-Release  : 11
+Release  : 12
 URL      : https://github.com/GNOME/gobject-introspection/archive/1.54.0.tar.gz
 Source0  : https://github.com/GNOME/gobject-introspection/archive/1.54.0.tar.gz
 Summary  : GObject Introspection
@@ -14,14 +14,15 @@ Requires: gobject-introspection-bin
 Requires: gobject-introspection-data
 Requires: gobject-introspection-lib
 Requires: gobject-introspection-doc
+Requires: glibc-bin
 BuildRequires : Mako
 BuildRequires : bison
 BuildRequires : docbook-xml
 BuildRequires : flex
 BuildRequires : glib-dev
+BuildRequires : glibc-bin
 BuildRequires : gtk-doc
 BuildRequires : gtk-doc-dev
-BuildRequires : libc-bin
 BuildRequires : libxslt-bin
 BuildRequires : pkgconfig(cairo)
 BuildRequires : pkgconfig(cairo-gobject)
@@ -93,11 +94,11 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1505138312
-export CFLAGS="$CFLAGS -O3 -falign-functions=32 -fno-semantic-interposition "
-export FCFLAGS="$CFLAGS -O3 -falign-functions=32 -fno-semantic-interposition "
-export FFLAGS="$CFLAGS -O3 -falign-functions=32 -fno-semantic-interposition "
-export CXXFLAGS="$CXXFLAGS -O3 -falign-functions=32 -fno-semantic-interposition "
+export SOURCE_DATE_EPOCH=1505318596
+export CFLAGS="$CFLAGS -O3 -falign-functions=32 -fno-common -fno-math-errno -fno-semantic-interposition -fno-trapping-math "
+export FCFLAGS="$CFLAGS -O3 -falign-functions=32 -fno-common -fno-math-errno -fno-semantic-interposition -fno-trapping-math "
+export FFLAGS="$CFLAGS -O3 -falign-functions=32 -fno-common -fno-math-errno -fno-semantic-interposition -fno-trapping-math "
+export CXXFLAGS="$CXXFLAGS -O3 -falign-functions=32 -fno-common -fno-math-errno -fno-semantic-interposition -fno-trapping-math "
 %autogen --disable-static
 make V=1  %{?_smp_mflags}
 
@@ -109,7 +110,7 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 make VERBOSE=1 V=1 %{?_smp_mflags} check
 
 %install
-export SOURCE_DATE_EPOCH=1505138312
+export SOURCE_DATE_EPOCH=1505318596
 rm -rf %{buildroot}
 %make_install
 

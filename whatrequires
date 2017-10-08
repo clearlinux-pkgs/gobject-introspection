@@ -5,10 +5,12 @@ at-spi2-core
 atk
 babl
 cheese
+colord
 faba-icon-theme
 gcr
 gdk-pixbuf
 gimp
+gnome-bluetooth
 gst-plugins-bad
 gst-plugins-base
 gst-plugins-good
@@ -23,9 +25,11 @@ libgudev
 librsvg
 libsoup
 moka-icon-theme
+nautilus
 pango
 spice-gtk
 totem
+totem-pl-parser
 upower
 virt-viewer
 webkitgtk

@@ -4,7 +4,7 @@
 #
 Name     : gobject-introspection
 Version  : 1.54.1
-Release  : 17
+Release  : 18
 URL      : https://github.com/GNOME/gobject-introspection/archive/1.54.1.tar.gz
 Source0  : https://github.com/GNOME/gobject-introspection/archive/1.54.1.tar.gz
 Summary  : GObject Introspection
@@ -95,7 +95,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1517630742
+export SOURCE_DATE_EPOCH=1517684209
 export CFLAGS="$CFLAGS -O3 -falign-functions=32 -fno-math-errno -fno-semantic-interposition -fno-trapping-math "
 export FCFLAGS="$CFLAGS -O3 -falign-functions=32 -fno-math-errno -fno-semantic-interposition -fno-trapping-math "
 export FFLAGS="$CFLAGS -O3 -falign-functions=32 -fno-math-errno -fno-semantic-interposition -fno-trapping-math "
@@ -111,7 +111,7 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 make VERBOSE=1 V=1 %{?_smp_mflags} check
 
 %install
-export SOURCE_DATE_EPOCH=1517630742
+export SOURCE_DATE_EPOCH=1517684209
 rm -rf %{buildroot}
 %make_install
 

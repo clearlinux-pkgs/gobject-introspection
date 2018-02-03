@@ -4,7 +4,7 @@
 #
 Name     : gobject-introspection
 Version  : 1.54.1
-Release  : 16
+Release  : 17
 URL      : https://github.com/GNOME/gobject-introspection/archive/1.54.1.tar.gz
 Source0  : https://github.com/GNOME/gobject-introspection/archive/1.54.1.tar.gz
 Summary  : GObject Introspection
@@ -95,13 +95,13 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1507494148
+export SOURCE_DATE_EPOCH=1517630742
 export CFLAGS="$CFLAGS -O3 -falign-functions=32 -fno-math-errno -fno-semantic-interposition -fno-trapping-math "
 export FCFLAGS="$CFLAGS -O3 -falign-functions=32 -fno-math-errno -fno-semantic-interposition -fno-trapping-math "
 export FFLAGS="$CFLAGS -O3 -falign-functions=32 -fno-math-errno -fno-semantic-interposition -fno-trapping-math "
 export CXXFLAGS="$CXXFLAGS -O3 -falign-functions=32 -fno-math-errno -fno-semantic-interposition -fno-trapping-math "
 %autogen --disable-static --with-python=python3
-make V=1  %{?_smp_mflags}
+make  %{?_smp_mflags}
 
 %check
 export LANG=C
@@ -111,7 +111,7 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 make VERBOSE=1 V=1 %{?_smp_mflags} check
 
 %install
-export SOURCE_DATE_EPOCH=1507494148
+export SOURCE_DATE_EPOCH=1517630742
 rm -rf %{buildroot}
 %make_install
 
@@ -203,28 +203,46 @@ rm -rf %{buildroot}
 %files lib
 %defattr(-,root,root,-)
 /usr/lib64/gobject-introspection/giscanner/__init__.py
-/usr/lib64/gobject-introspection/giscanner/__init__.pyc
+/usr/lib64/gobject-introspection/giscanner/__pycache__/__init__.cpython-36.pyc
+/usr/lib64/gobject-introspection/giscanner/__pycache__/annotationmain.cpython-36.pyc
+/usr/lib64/gobject-introspection/giscanner/__pycache__/annotationparser.cpython-36.pyc
+/usr/lib64/gobject-introspection/giscanner/__pycache__/ast.cpython-36.pyc
+/usr/lib64/gobject-introspection/giscanner/__pycache__/cachestore.cpython-36.pyc
+/usr/lib64/gobject-introspection/giscanner/__pycache__/ccompiler.cpython-36.pyc
+/usr/lib64/gobject-introspection/giscanner/__pycache__/codegen.cpython-36.pyc
+/usr/lib64/gobject-introspection/giscanner/__pycache__/docmain.cpython-36.pyc
+/usr/lib64/gobject-introspection/giscanner/__pycache__/docwriter.cpython-36.pyc
+/usr/lib64/gobject-introspection/giscanner/__pycache__/dumper.cpython-36.pyc
+/usr/lib64/gobject-introspection/giscanner/__pycache__/gdumpparser.cpython-36.pyc
+/usr/lib64/gobject-introspection/giscanner/__pycache__/girparser.cpython-36.pyc
+/usr/lib64/gobject-introspection/giscanner/__pycache__/girwriter.cpython-36.pyc
+/usr/lib64/gobject-introspection/giscanner/__pycache__/introspectablepass.cpython-36.pyc
+/usr/lib64/gobject-introspection/giscanner/__pycache__/libtoolimporter.cpython-36.pyc
+/usr/lib64/gobject-introspection/giscanner/__pycache__/maintransformer.cpython-36.pyc
+/usr/lib64/gobject-introspection/giscanner/__pycache__/message.cpython-36.pyc
+/usr/lib64/gobject-introspection/giscanner/__pycache__/msvccompiler.cpython-36.pyc
+/usr/lib64/gobject-introspection/giscanner/__pycache__/scannermain.cpython-36.pyc
+/usr/lib64/gobject-introspection/giscanner/__pycache__/sectionparser.cpython-36.pyc
+/usr/lib64/gobject-introspection/giscanner/__pycache__/shlibs.cpython-36.pyc
+/usr/lib64/gobject-introspection/giscanner/__pycache__/sourcescanner.cpython-36.pyc
+/usr/lib64/gobject-introspection/giscanner/__pycache__/testcodegen.cpython-36.pyc
+/usr/lib64/gobject-introspection/giscanner/__pycache__/transformer.cpython-36.pyc
+/usr/lib64/gobject-introspection/giscanner/__pycache__/utils.cpython-36.pyc
+/usr/lib64/gobject-introspection/giscanner/__pycache__/xmlwriter.cpython-36.pyc
 /usr/lib64/gobject-introspection/giscanner/_giscanner.so
 /usr/lib64/gobject-introspection/giscanner/annotationmain.py
-/usr/lib64/gobject-introspection/giscanner/annotationmain.pyc
 /usr/lib64/gobject-introspection/giscanner/annotationparser.py
-/usr/lib64/gobject-introspection/giscanner/annotationparser.pyc
 /usr/lib64/gobject-introspection/giscanner/ast.py
-/usr/lib64/gobject-introspection/giscanner/ast.pyc
 /usr/lib64/gobject-introspection/giscanner/cachestore.py
-/usr/lib64/gobject-introspection/giscanner/cachestore.pyc
 /usr/lib64/gobject-introspection/giscanner/ccompiler.py
-/usr/lib64/gobject-introspection/giscanner/ccompiler.pyc
 /usr/lib64/gobject-introspection/giscanner/codegen.py
-/usr/lib64/gobject-introspection/giscanner/codegen.pyc
 /usr/lib64/gobject-introspection/giscanner/collections/__init__.py
-/usr/lib64/gobject-introspection/giscanner/collections/__init__.pyc
+/usr/lib64/gobject-introspection/giscanner/collections/__pycache__/__init__.cpython-36.pyc
+/usr/lib64/gobject-introspection/giscanner/collections/__pycache__/counter.cpython-36.pyc
+/usr/lib64/gobject-introspection/giscanner/collections/__pycache__/ordereddict.cpython-36.pyc
 /usr/lib64/gobject-introspection/giscanner/collections/counter.py
-/usr/lib64/gobject-introspection/giscanner/collections/counter.pyc
 /usr/lib64/gobject-introspection/giscanner/collections/ordereddict.py
-/usr/lib64/gobject-introspection/giscanner/collections/ordereddict.pyc
 /usr/lib64/gobject-introspection/giscanner/docmain.py
-/usr/lib64/gobject-introspection/giscanner/docmain.pyc
 /usr/lib64/gobject-introspection/giscanner/doctemplates/C/callback.tmpl
 /usr/lib64/gobject-introspection/giscanner/doctemplates/C/class.tmpl
 /usr/lib64/gobject-introspection/giscanner/doctemplates/C/constructor.tmpl
@@ -271,40 +289,22 @@ rm -rf %{buildroot}
 /usr/lib64/gobject-introspection/giscanner/doctemplates/class.tmpl
 /usr/lib64/gobject-introspection/giscanner/doctemplates/namespace.tmpl
 /usr/lib64/gobject-introspection/giscanner/docwriter.py
-/usr/lib64/gobject-introspection/giscanner/docwriter.pyc
 /usr/lib64/gobject-introspection/giscanner/dumper.py
-/usr/lib64/gobject-introspection/giscanner/dumper.pyc
 /usr/lib64/gobject-introspection/giscanner/gdumpparser.py
-/usr/lib64/gobject-introspection/giscanner/gdumpparser.pyc
 /usr/lib64/gobject-introspection/giscanner/girparser.py
-/usr/lib64/gobject-introspection/giscanner/girparser.pyc
 /usr/lib64/gobject-introspection/giscanner/girwriter.py
-/usr/lib64/gobject-introspection/giscanner/girwriter.pyc
 /usr/lib64/gobject-introspection/giscanner/introspectablepass.py
-/usr/lib64/gobject-introspection/giscanner/introspectablepass.pyc
 /usr/lib64/gobject-introspection/giscanner/libtoolimporter.py
-/usr/lib64/gobject-introspection/giscanner/libtoolimporter.pyc
 /usr/lib64/gobject-introspection/giscanner/maintransformer.py
-/usr/lib64/gobject-introspection/giscanner/maintransformer.pyc
 /usr/lib64/gobject-introspection/giscanner/message.py
-/usr/lib64/gobject-introspection/giscanner/message.pyc
 /usr/lib64/gobject-introspection/giscanner/msvccompiler.py
-/usr/lib64/gobject-introspection/giscanner/msvccompiler.pyc
 /usr/lib64/gobject-introspection/giscanner/scannermain.py
-/usr/lib64/gobject-introspection/giscanner/scannermain.pyc
 /usr/lib64/gobject-introspection/giscanner/sectionparser.py
-/usr/lib64/gobject-introspection/giscanner/sectionparser.pyc
 /usr/lib64/gobject-introspection/giscanner/shlibs.py
-/usr/lib64/gobject-introspection/giscanner/shlibs.pyc
 /usr/lib64/gobject-introspection/giscanner/sourcescanner.py
-/usr/lib64/gobject-introspection/giscanner/sourcescanner.pyc
 /usr/lib64/gobject-introspection/giscanner/testcodegen.py
-/usr/lib64/gobject-introspection/giscanner/testcodegen.pyc
 /usr/lib64/gobject-introspection/giscanner/transformer.py
-/usr/lib64/gobject-introspection/giscanner/transformer.pyc
 /usr/lib64/gobject-introspection/giscanner/utils.py
-/usr/lib64/gobject-introspection/giscanner/utils.pyc
 /usr/lib64/gobject-introspection/giscanner/xmlwriter.py
-/usr/lib64/gobject-introspection/giscanner/xmlwriter.pyc
 /usr/lib64/libgirepository-1.0.so.1
 /usr/lib64/libgirepository-1.0.so.1.0.0

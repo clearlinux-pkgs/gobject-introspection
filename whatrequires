@@ -1,6 +1,7 @@
 # This file contains recursive sources that require this package
 FreeRDP
 adwaita-icon-theme
+appstream-glib
 at-spi2-core
 atk
 babl
@@ -9,6 +10,7 @@ colord
 faba-icon-theme
 gcr
 gdk-pixbuf
+gedit
 gimp
 gnome-bluetooth
 gst-plugins-bad
@@ -22,6 +24,7 @@ hexchat
 ibus
 json-glib
 libgudev
+libmediaart
 librsvg
 libsoup
 moka-icon-theme

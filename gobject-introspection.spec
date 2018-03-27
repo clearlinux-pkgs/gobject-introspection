@@ -4,7 +4,7 @@
 #
 Name     : gobject-introspection
 Version  : 1.54.1
-Release  : 18
+Release  : 19
 URL      : https://github.com/GNOME/gobject-introspection/archive/1.54.1.tar.gz
 Source0  : https://github.com/GNOME/gobject-introspection/archive/1.54.1.tar.gz
 Summary  : GObject Introspection
@@ -65,6 +65,7 @@ Requires: gobject-introspection-lib
 Requires: gobject-introspection-bin
 Requires: gobject-introspection-data
 Provides: gobject-introspection-devel
+Requires: glibc-bin
 
 %description dev
 dev components for the gobject-introspection package.

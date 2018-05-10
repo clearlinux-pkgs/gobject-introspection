@@ -4,7 +4,7 @@
 #
 Name     : gobject-introspection
 Version  : 1.54.1
-Release  : 19
+Release  : 20
 URL      : https://github.com/GNOME/gobject-introspection/archive/1.54.1.tar.gz
 Source0  : https://github.com/GNOME/gobject-introspection/archive/1.54.1.tar.gz
 Summary  : GObject Introspection

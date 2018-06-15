@@ -32,7 +32,7 @@ BuildRequires : pkgconfig(glib-2.0)
 BuildRequires : pkgconfig(gmodule-2.0)
 BuildRequires : pkgconfig(gobject-2.0)
 BuildRequires : pkgconfig(libffi)
-BuildRequires : python-dev
+
 BuildRequires : python3-dev
 
 %description

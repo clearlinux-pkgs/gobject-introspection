@@ -4,7 +4,7 @@
 #
 Name     : gobject-introspection
 Version  : 1.54.1
-Release  : 23
+Release  : 24
 URL      : https://github.com/GNOME/gobject-introspection/archive/1.54.1.tar.gz
 Source0  : https://github.com/GNOME/gobject-introspection/archive/1.54.1.tar.gz
 Summary  : GObject Introspection
@@ -13,7 +13,8 @@ License  : GPL-2.0 LGPL-2.0
 Requires: gobject-introspection-bin
 Requires: gobject-introspection-data
 Requires: gobject-introspection-lib
-Requires: gobject-introspection-doc
+Requires: gobject-introspection-license
+Requires: gobject-introspection-man
 Requires: glibc-bin
 BuildRequires : Mako
 BuildRequires : bison
@@ -32,7 +33,7 @@ BuildRequires : pkgconfig(glib-2.0)
 BuildRequires : pkgconfig(gmodule-2.0)
 BuildRequires : pkgconfig(gobject-2.0)
 BuildRequires : pkgconfig(libffi)
-
+BuildRequires : python-dev
 BuildRequires : python3-dev
 
 %description
@@ -45,6 +46,8 @@ a uniform, machine readable format.
 Summary: bin components for the gobject-introspection package.
 Group: Binaries
 Requires: gobject-introspection-data
+Requires: gobject-introspection-license
+Requires: gobject-introspection-man
 
 %description bin
 bin components for the gobject-introspection package.
@@ -65,27 +68,35 @@ Requires: gobject-introspection-lib
 Requires: gobject-introspection-bin
 Requires: gobject-introspection-data
 Provides: gobject-introspection-devel
-Requires: glibc-bin
 
 %description dev
 dev components for the gobject-introspection package.
-
-
-%package doc
-Summary: doc components for the gobject-introspection package.
-Group: Documentation
-
-%description doc
-doc components for the gobject-introspection package.
 
 
 %package lib
 Summary: lib components for the gobject-introspection package.
 Group: Libraries
 Requires: gobject-introspection-data
+Requires: gobject-introspection-license
 
 %description lib
 lib components for the gobject-introspection package.
+
+
+%package license
+Summary: license components for the gobject-introspection package.
+Group: Default
+
+%description license
+license components for the gobject-introspection package.
+
+
+%package man
+Summary: man components for the gobject-introspection package.
+Group: Default
+
+%description man
+man components for the gobject-introspection package.
 
 
 %prep
@@ -96,7 +107,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1517684209
+export SOURCE_DATE_EPOCH=1530740099
 export CFLAGS="$CFLAGS -O3 -falign-functions=32 -fno-math-errno -fno-semantic-interposition -fno-trapping-math "
 export FCFLAGS="$CFLAGS -O3 -falign-functions=32 -fno-math-errno -fno-semantic-interposition -fno-trapping-math "
 export FFLAGS="$CFLAGS -O3 -falign-functions=32 -fno-math-errno -fno-semantic-interposition -fno-trapping-math "
@@ -112,8 +123,14 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 make VERBOSE=1 V=1 %{?_smp_mflags} check
 
 %install
-export SOURCE_DATE_EPOCH=1517684209
+export SOURCE_DATE_EPOCH=1530740099
 rm -rf %{buildroot}
+mkdir -p %{buildroot}/usr/share/doc/gobject-introspection
+cp COPYING.tools %{buildroot}/usr/share/doc/gobject-introspection/COPYING.tools
+cp COPYING.lib %{buildroot}/usr/share/doc/gobject-introspection/COPYING.lib
+cp COPYING.LGPL %{buildroot}/usr/share/doc/gobject-introspection/COPYING.LGPL
+cp COPYING.GPL %{buildroot}/usr/share/doc/gobject-introspection/COPYING.GPL
+cp COPYING %{buildroot}/usr/share/doc/gobject-introspection/COPYING
 %make_install
 
 %files
@@ -197,39 +214,9 @@ rm -rf %{buildroot}
 /usr/lib64/pkgconfig/gobject-introspection-no-export-1.0.pc
 /usr/share/aclocal/*.m4
 
-%files doc
-%defattr(-,root,root,-)
-%doc /usr/share/man/man1/*
-
 %files lib
 %defattr(-,root,root,-)
 /usr/lib64/gobject-introspection/giscanner/__init__.py
-/usr/lib64/gobject-introspection/giscanner/__pycache__/__init__.cpython-36.pyc
-/usr/lib64/gobject-introspection/giscanner/__pycache__/annotationmain.cpython-36.pyc
-/usr/lib64/gobject-introspection/giscanner/__pycache__/annotationparser.cpython-36.pyc
-/usr/lib64/gobject-introspection/giscanner/__pycache__/ast.cpython-36.pyc
-/usr/lib64/gobject-introspection/giscanner/__pycache__/cachestore.cpython-36.pyc
-/usr/lib64/gobject-introspection/giscanner/__pycache__/ccompiler.cpython-36.pyc
-/usr/lib64/gobject-introspection/giscanner/__pycache__/codegen.cpython-36.pyc
-/usr/lib64/gobject-introspection/giscanner/__pycache__/docmain.cpython-36.pyc
-/usr/lib64/gobject-introspection/giscanner/__pycache__/docwriter.cpython-36.pyc
-/usr/lib64/gobject-introspection/giscanner/__pycache__/dumper.cpython-36.pyc
-/usr/lib64/gobject-introspection/giscanner/__pycache__/gdumpparser.cpython-36.pyc
-/usr/lib64/gobject-introspection/giscanner/__pycache__/girparser.cpython-36.pyc
-/usr/lib64/gobject-introspection/giscanner/__pycache__/girwriter.cpython-36.pyc
-/usr/lib64/gobject-introspection/giscanner/__pycache__/introspectablepass.cpython-36.pyc
-/usr/lib64/gobject-introspection/giscanner/__pycache__/libtoolimporter.cpython-36.pyc
-/usr/lib64/gobject-introspection/giscanner/__pycache__/maintransformer.cpython-36.pyc
-/usr/lib64/gobject-introspection/giscanner/__pycache__/message.cpython-36.pyc
-/usr/lib64/gobject-introspection/giscanner/__pycache__/msvccompiler.cpython-36.pyc
-/usr/lib64/gobject-introspection/giscanner/__pycache__/scannermain.cpython-36.pyc
-/usr/lib64/gobject-introspection/giscanner/__pycache__/sectionparser.cpython-36.pyc
-/usr/lib64/gobject-introspection/giscanner/__pycache__/shlibs.cpython-36.pyc
-/usr/lib64/gobject-introspection/giscanner/__pycache__/sourcescanner.cpython-36.pyc
-/usr/lib64/gobject-introspection/giscanner/__pycache__/testcodegen.cpython-36.pyc
-/usr/lib64/gobject-introspection/giscanner/__pycache__/transformer.cpython-36.pyc
-/usr/lib64/gobject-introspection/giscanner/__pycache__/utils.cpython-36.pyc
-/usr/lib64/gobject-introspection/giscanner/__pycache__/xmlwriter.cpython-36.pyc
 /usr/lib64/gobject-introspection/giscanner/_giscanner.so
 /usr/lib64/gobject-introspection/giscanner/annotationmain.py
 /usr/lib64/gobject-introspection/giscanner/annotationparser.py
@@ -238,9 +225,6 @@ rm -rf %{buildroot}
 /usr/lib64/gobject-introspection/giscanner/ccompiler.py
 /usr/lib64/gobject-introspection/giscanner/codegen.py
 /usr/lib64/gobject-introspection/giscanner/collections/__init__.py
-/usr/lib64/gobject-introspection/giscanner/collections/__pycache__/__init__.cpython-36.pyc
-/usr/lib64/gobject-introspection/giscanner/collections/__pycache__/counter.cpython-36.pyc
-/usr/lib64/gobject-introspection/giscanner/collections/__pycache__/ordereddict.cpython-36.pyc
 /usr/lib64/gobject-introspection/giscanner/collections/counter.py
 /usr/lib64/gobject-introspection/giscanner/collections/ordereddict.py
 /usr/lib64/gobject-introspection/giscanner/docmain.py
@@ -309,3 +293,17 @@ rm -rf %{buildroot}
 /usr/lib64/gobject-introspection/giscanner/xmlwriter.py
 /usr/lib64/libgirepository-1.0.so.1
 /usr/lib64/libgirepository-1.0.so.1.0.0
+
+%files license
+%defattr(-,root,root,-)
+/usr/share/doc/gobject-introspection/COPYING
+/usr/share/doc/gobject-introspection/COPYING.GPL
+/usr/share/doc/gobject-introspection/COPYING.LGPL
+/usr/share/doc/gobject-introspection/COPYING.lib
+/usr/share/doc/gobject-introspection/COPYING.tools
+
+%files man
+%defattr(-,root,root,-)
+/usr/share/man/man1/g-ir-compiler.1
+/usr/share/man/man1/g-ir-generate.1
+/usr/share/man/man1/g-ir-scanner.1

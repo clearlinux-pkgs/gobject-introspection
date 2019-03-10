@@ -4,7 +4,7 @@
 #
 Name     : gobject-introspection
 Version  : 1.60.0
-Release  : 26
+Release  : 27
 URL      : https://github.com/GNOME/gobject-introspection/archive/1.60.0.tar.gz
 Source0  : https://github.com/GNOME/gobject-introspection/archive/1.60.0.tar.gz
 Summary  : Introspection system for GObject-based libraries
@@ -17,6 +17,7 @@ Requires: gobject-introspection-license = %{version}-%{release}
 Requires: gobject-introspection-man = %{version}-%{release}
 Requires: glibc-bin
 BuildRequires : Mako
+BuildRequires : Markdown
 BuildRequires : bison
 BuildRequires : buildreq-meson
 BuildRequires : docbook-xml
@@ -110,13 +111,13 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1552258981
+export SOURCE_DATE_EPOCH=1552259284
 export LDFLAGS="${LDFLAGS} -fno-lto"
 export CFLAGS="$CFLAGS -O3 -falign-functions=32 -fno-math-errno -fno-semantic-interposition -fno-trapping-math "
 export FCFLAGS="$CFLAGS -O3 -falign-functions=32 -fno-math-errno -fno-semantic-interposition -fno-trapping-math "
 export FFLAGS="$CFLAGS -O3 -falign-functions=32 -fno-math-errno -fno-semantic-interposition -fno-trapping-math "
 export CXXFLAGS="$CXXFLAGS -O3 -falign-functions=32 -fno-math-errno -fno-semantic-interposition -fno-trapping-math "
-CFLAGS="$CFLAGS" CXXFLAGS="$CXXFLAGS" LDFLAGS="$LDFLAGS" meson --prefix /usr --buildtype=plain   builddir
+CFLAGS="$CFLAGS" CXXFLAGS="$CXXFLAGS" LDFLAGS="$LDFLAGS" meson --prefix /usr --buildtype=plain -Ddoctool=true  builddir
 ninja -v -C builddir
 
 %install
@@ -133,6 +134,7 @@ DESTDIR=%{buildroot} ninja -C builddir install
 %defattr(-,root,root,-)
 /usr/bin/g-ir-annotation-tool
 /usr/bin/g-ir-compiler
+/usr/bin/g-ir-doc-tool
 /usr/bin/g-ir-generate
 /usr/bin/g-ir-inspect
 /usr/bin/g-ir-scanner

@@ -6,7 +6,6 @@ colord
 compat-gtksourceview-soname3
 gcr
 gdk-pixbuf
-geocode-glib
 gjs
 gnome-bluetooth
 gnome-settings-daemon

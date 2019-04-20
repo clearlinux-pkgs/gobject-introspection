@@ -4,7 +4,7 @@
 #
 Name     : gobject-introspection
 Version  : 1.60.1
-Release  : 28
+Release  : 29
 URL      : https://github.com/GNOME/gobject-introspection/archive/1.60.1/gobject-introspection-1.60.1.tar.gz
 Source0  : https://github.com/GNOME/gobject-introspection/archive/1.60.1/gobject-introspection-1.60.1.tar.gz
 Summary  : Introspection system for GObject-based libraries

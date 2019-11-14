@@ -4,10 +4,10 @@
 #
 Name     : gobject-introspection
 Version  : 1.62.0
-Release  : 32
+Release  : 33
 URL      : https://github.com/GNOME/gobject-introspection/archive/1.62.0/gobject-introspection-1.62.0.tar.gz
 Source0  : https://github.com/GNOME/gobject-introspection/archive/1.62.0/gobject-introspection-1.62.0.tar.gz
-Summary  : Introspection system for GObject-based libraries
+Summary  : GObject Introspection
 Group    : Development/Tools
 License  : GPL-2.0 LGPL-2.0
 Requires: gobject-introspection-bin = %{version}-%{release}
@@ -57,7 +57,6 @@ Requires: gobject-introspection-bin = %{version}-%{release}
 Requires: gobject-introspection-data = %{version}-%{release}
 Provides: gobject-introspection-devel = %{version}-%{release}
 Requires: gobject-introspection = %{version}-%{release}
-Requires: gobject-introspection = %{version}-%{release}
 
 %description dev
 dev components for the gobject-introspection package.
@@ -91,14 +90,14 @@ man components for the gobject-introspection package.
 
 %prep
 %setup -q -n gobject-introspection-1.62.0
+cd %{_builddir}/gobject-introspection-1.62.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1568086373
-# -Werror is for werrorists
+export SOURCE_DATE_EPOCH=1573763512
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -112,9 +111,9 @@ ninja -v -C builddir
 
 %install
 mkdir -p %{buildroot}/usr/share/package-licenses/gobject-introspection
-cp COPYING %{buildroot}/usr/share/package-licenses/gobject-introspection/COPYING
-cp COPYING.GPL %{buildroot}/usr/share/package-licenses/gobject-introspection/COPYING.GPL
-cp COPYING.LGPL %{buildroot}/usr/share/package-licenses/gobject-introspection/COPYING.LGPL
+cp %{_builddir}/gobject-introspection-1.62.0/COPYING %{buildroot}/usr/share/package-licenses/gobject-introspection/80fe7119545c554233bbac373a7d8b0104e45cd1
+cp %{_builddir}/gobject-introspection-1.62.0/COPYING.GPL %{buildroot}/usr/share/package-licenses/gobject-introspection/dfac199a7539a404407098a2541b9482279f690d
+cp %{_builddir}/gobject-introspection-1.62.0/COPYING.LGPL %{buildroot}/usr/share/package-licenses/gobject-introspection/bf50bac24e7ec325dbb09c6b6c4dcc88a7d79e8f
 DESTDIR=%{buildroot} ninja -C builddir install
 
 %files
@@ -203,7 +202,7 @@ DESTDIR=%{buildroot} ninja -C builddir install
 %files lib
 %defattr(-,root,root,-)
 /usr/lib64/gobject-introspection/giscanner/__init__.py
-/usr/lib64/gobject-introspection/giscanner/_giscanner.cpython-37m-x86_64-linux-gnu.so
+/usr/lib64/gobject-introspection/giscanner/_giscanner.cpython-38-x86_64-linux-gnu.so
 /usr/lib64/gobject-introspection/giscanner/_version.py
 /usr/lib64/gobject-introspection/giscanner/annotationmain.py
 /usr/lib64/gobject-introspection/giscanner/annotationparser.py
@@ -299,9 +298,9 @@ DESTDIR=%{buildroot} ninja -C builddir install
 
 %files license
 %defattr(0644,root,root,0755)
-/usr/share/package-licenses/gobject-introspection/COPYING
-/usr/share/package-licenses/gobject-introspection/COPYING.GPL
-/usr/share/package-licenses/gobject-introspection/COPYING.LGPL
+/usr/share/package-licenses/gobject-introspection/80fe7119545c554233bbac373a7d8b0104e45cd1
+/usr/share/package-licenses/gobject-introspection/bf50bac24e7ec325dbb09c6b6c4dcc88a7d79e8f
+/usr/share/package-licenses/gobject-introspection/dfac199a7539a404407098a2541b9482279f690d
 
 %files man
 %defattr(0644,root,root,0755)

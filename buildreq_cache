@@ -1,4 +1,4 @@
-1.64.0
+1.64.1
 cairo-dev
 pkgconfig(cairo)
 pkgconfig(cairo-gobject)

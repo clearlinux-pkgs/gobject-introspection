@@ -4,7 +4,7 @@
 #
 Name     : gobject-introspection
 Version  : 1.66.0
-Release  : 36
+Release  : 37
 URL      : https://github.com/GNOME/gobject-introspection/archive/1.66.0/gobject-introspection-1.66.0.tar.gz
 Source0  : https://github.com/GNOME/gobject-introspection/archive/1.66.0/gobject-introspection-1.66.0.tar.gz
 Summary  : No detailed summary available

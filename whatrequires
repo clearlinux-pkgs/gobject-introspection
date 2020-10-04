@@ -8,9 +8,7 @@ gcr
 gdk-pixbuf
 gnome-bluetooth
 gnome-settings-daemon
-gom
 graphene
-gstreamer
 gtk+
 gtksourceview
 harfbuzz
@@ -25,7 +23,6 @@ lightdm
 mutter
 nautilus
 orca
-pango
 spice-gtk
 upower
 webkitgtk

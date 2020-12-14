@@ -20,7 +20,6 @@ libgudev
 librsvg
 libsoup
 lightdm
-mutter
 nautilus
 orca
 spice-gtk

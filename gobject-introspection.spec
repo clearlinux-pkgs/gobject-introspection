@@ -4,7 +4,7 @@
 #
 Name     : gobject-introspection
 Version  : 1.66.1
-Release  : 42
+Release  : 43
 URL      : https://github.com/GNOME/gobject-introspection/archive/1.66.1/gobject-introspection-1.66.1.tar.gz
 Source0  : https://github.com/GNOME/gobject-introspection/archive/1.66.1/gobject-introspection-1.66.1.tar.gz
 Summary  : No detailed summary available
@@ -100,7 +100,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1607970801
+export SOURCE_DATE_EPOCH=1607985583
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib

@@ -2,11 +2,9 @@
 appstream-glib
 at-spi2-core
 atk
-colord
 compat-gtksourceview-soname3
 gcr
 gdk-pixbuf
-gnome-bluetooth
 gnome-settings-daemon
 graphene
 gtk+
@@ -19,6 +17,7 @@ libdazzle
 libgudev
 librsvg
 libsoup
+libvirt-glib
 lightdm
 nautilus
 orca

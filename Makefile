@@ -1,5 +1,5 @@
 PKG_NAME := gobject-introspection
-URL = https://github.com/GNOME/gobject-introspection/archive/1.68.0/gobject-introspection-1.68.0.tar.gz
+URL = https://download.gnome.org/sources/gobject-introspection/1.68/gobject-introspection-1.68.0.tar.xz
 ARCHIVES = 
 
 include ../common/Makefile.common

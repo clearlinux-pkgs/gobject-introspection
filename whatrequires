@@ -5,6 +5,7 @@ atk
 compat-gtksourceview-soname3
 gcr
 gdk-pixbuf
+gexiv2
 gnome-settings-daemon
 graphene
 gtk+
@@ -12,7 +13,6 @@ gtksourceview
 harfbuzz
 ibus
 igt-gpu-tools
-json-glib
 libdazzle
 libgudev
 librsvg
@@ -21,6 +21,5 @@ libvirt-glib
 lightdm
 nautilus
 orca
-spice-gtk
 upower
 webkitgtk

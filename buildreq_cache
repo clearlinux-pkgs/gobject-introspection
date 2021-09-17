@@ -1,4 +1,0 @@
-1.68.0
-cairo-dev
-pkgconfig(cairo)
-pkgconfig(cairo-gobject)

@@ -3,6 +3,8 @@ appstream-glib
 at-spi2-core
 atk
 compat-gtksourceview-soname3
+compat-libsoup-soname-24
+compat-webkitgtk-soname40
 gcr
 gdk-pixbuf
 gexiv2
@@ -21,5 +23,6 @@ libvirt-glib
 lightdm
 nautilus
 orca
+tracker
 upower
 webkitgtk

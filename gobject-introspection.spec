@@ -4,7 +4,7 @@
 #
 Name     : gobject-introspection
 Version  : 1.70.0
-Release  : 47
+Release  : 48
 URL      : https://download.gnome.org/sources/gobject-introspection/1.70/gobject-introspection-1.70.0.tar.xz
 Source0  : https://download.gnome.org/sources/gobject-introspection/1.70/gobject-introspection-1.70.0.tar.xz
 Summary  : No detailed summary available
@@ -17,6 +17,7 @@ Requires: gobject-introspection-license = %{version}-%{release}
 Requires: gobject-introspection-man = %{version}-%{release}
 Requires: glibc-bin
 BuildRequires : Mako
+BuildRequires : Markdown
 BuildRequires : bison
 BuildRequires : buildreq-gnome
 BuildRequires : buildreq-meson
@@ -98,15 +99,15 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1631911307
+export SOURCE_DATE_EPOCH=1635447566
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
-export CFLAGS="$CFLAGS -O3 -Ofast -falign-functions=32 -ffat-lto-objects -flto=auto -fno-semantic-interposition -mprefer-vector-width=256 "
-export FCFLAGS="$FFLAGS -O3 -Ofast -falign-functions=32 -ffat-lto-objects -flto=auto -fno-semantic-interposition -mprefer-vector-width=256 "
-export FFLAGS="$FFLAGS -O3 -Ofast -falign-functions=32 -ffat-lto-objects -flto=auto -fno-semantic-interposition -mprefer-vector-width=256 "
-export CXXFLAGS="$CXXFLAGS -O3 -Ofast -falign-functions=32 -ffat-lto-objects -flto=auto -fno-semantic-interposition -mprefer-vector-width=256 "
+export CFLAGS="$CFLAGS -O3 -Ofast -falign-functions=32 -ffat-lto-objects -flto=auto -fno-semantic-interposition -mno-vzeroupper -mprefer-vector-width=256 "
+export FCFLAGS="$FFLAGS -O3 -Ofast -falign-functions=32 -ffat-lto-objects -flto=auto -fno-semantic-interposition -mno-vzeroupper -mprefer-vector-width=256 "
+export FFLAGS="$FFLAGS -O3 -Ofast -falign-functions=32 -ffat-lto-objects -flto=auto -fno-semantic-interposition -mno-vzeroupper -mprefer-vector-width=256 "
+export CXXFLAGS="$CXXFLAGS -O3 -Ofast -falign-functions=32 -ffat-lto-objects -flto=auto -fno-semantic-interposition -mno-vzeroupper -mprefer-vector-width=256 "
 CFLAGS="$CFLAGS" CXXFLAGS="$CXXFLAGS" LDFLAGS="$LDFLAGS" meson --libdir=lib64 --prefix=/usr --buildtype=plain   builddir
 ninja -v -C builddir
 
@@ -115,7 +116,7 @@ export LANG=C.UTF-8
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-meson test -C builddir || :
+meson test -C builddir --print-errorlogs || :
 
 %install
 mkdir -p %{buildroot}/usr/share/package-licenses/gobject-introspection
@@ -131,6 +132,7 @@ DESTDIR=%{buildroot} ninja -C builddir install
 %defattr(-,root,root,-)
 /usr/bin/g-ir-annotation-tool
 /usr/bin/g-ir-compiler
+/usr/bin/g-ir-doc-tool
 /usr/bin/g-ir-generate
 /usr/bin/g-ir-inspect
 /usr/bin/g-ir-scanner
@@ -209,7 +211,7 @@ DESTDIR=%{buildroot} ninja -C builddir install
 %files lib
 %defattr(-,root,root,-)
 /usr/lib64/gobject-introspection/giscanner/__init__.py
-/usr/lib64/gobject-introspection/giscanner/_giscanner.cpython-39-x86_64-linux-gnu.so
+/usr/lib64/gobject-introspection/giscanner/_giscanner.cpython-310-x86_64-linux-gnu.so
 /usr/lib64/gobject-introspection/giscanner/_version.py
 /usr/lib64/gobject-introspection/giscanner/annotationmain.py
 /usr/lib64/gobject-introspection/giscanner/annotationparser.py

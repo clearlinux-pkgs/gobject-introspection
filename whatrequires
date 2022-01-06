@@ -11,6 +11,7 @@ gexiv2
 gnome-settings-daemon
 graphene
 gtk+
+gtk4
 gtksourceview
 harfbuzz
 ibus

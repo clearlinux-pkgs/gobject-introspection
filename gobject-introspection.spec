@@ -4,7 +4,7 @@
 #
 Name     : gobject-introspection
 Version  : 1.70.0
-Release  : 48
+Release  : 49
 URL      : https://download.gnome.org/sources/gobject-introspection/1.70/gobject-introspection-1.70.0.tar.xz
 Source0  : https://download.gnome.org/sources/gobject-introspection/1.70/gobject-introspection-1.70.0.tar.xz
 Summary  : No detailed summary available
@@ -16,7 +16,6 @@ Requires: gobject-introspection-lib = %{version}-%{release}
 Requires: gobject-introspection-license = %{version}-%{release}
 Requires: gobject-introspection-man = %{version}-%{release}
 Requires: glibc-bin
-BuildRequires : Mako
 BuildRequires : Markdown
 BuildRequires : bison
 BuildRequires : buildreq-gnome
@@ -25,6 +24,7 @@ BuildRequires : flex
 BuildRequires : glib-dev
 BuildRequires : glibc-bin
 BuildRequires : pkgconfig(gobject-2.0)
+BuildRequires : pypi-mako
 BuildRequires : python3-dev
 
 %description
@@ -99,7 +99,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1635447566
+export SOURCE_DATE_EPOCH=1641468748
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib

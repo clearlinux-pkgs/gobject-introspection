@@ -5,4 +5,4 @@ bison
 glib-dev
 python3-dev
 glibc-bin
-Mako
+pypi-mako

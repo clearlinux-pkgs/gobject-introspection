@@ -23,9 +23,12 @@ libgirepository-1.0.so.1:g_base_info_iterate_attributes
 libgirepository-1.0.so.1:g_base_info_ref
 libgirepository-1.0.so.1:g_base_info_unref
 libgirepository-1.0.so.1:g_callable_info_can_throw_gerror
+libgirepository-1.0.so.1:g_callable_info_create_closure
+libgirepository-1.0.so.1:g_callable_info_destroy_closure
 libgirepository-1.0.so.1:g_callable_info_free_closure
 libgirepository-1.0.so.1:g_callable_info_get_arg
 libgirepository-1.0.so.1:g_callable_info_get_caller_owns
+libgirepository-1.0.so.1:g_callable_info_get_closure_native_address
 libgirepository-1.0.so.1:g_callable_info_get_instance_ownership_transfer
 libgirepository-1.0.so.1:g_callable_info_get_n_args
 libgirepository-1.0.so.1:g_callable_info_get_return_attribute
@@ -205,4 +208,7 @@ libgirepository-1.0.so.1:gi_get_major_version
 libgirepository-1.0.so.1:gi_get_micro_version
 libgirepository-1.0.so.1:gi_get_minor_version
 libgirepository-1.0.so.1:gi_type_info_extract_ffi_return_value
+libgirepository-1.0.so.1:gi_type_tag_argument_from_hash_pointer
+libgirepository-1.0.so.1:gi_type_tag_extract_ffi_return_value
 libgirepository-1.0.so.1:gi_type_tag_get_ffi_type
+libgirepository-1.0.so.1:gi_type_tag_hash_pointer_from_argument

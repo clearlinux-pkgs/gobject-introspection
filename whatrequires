@@ -13,6 +13,7 @@ graphene
 gtk+
 gtk4
 gtksourceview
+gtksourceview4
 harfbuzz
 ibus
 igt-gpu-tools
@@ -27,3 +28,4 @@ orca
 tracker
 upower
 webkitgtk
+wireplumber

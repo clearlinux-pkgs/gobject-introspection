@@ -4,7 +4,7 @@
 #
 Name     : gobject-introspection
 Version  : 1.74.0
-Release  : 54
+Release  : 55
 URL      : https://download.gnome.org/sources/gobject-introspection/1.74/gobject-introspection-1.74.0.tar.xz
 Source0  : https://download.gnome.org/sources/gobject-introspection/1.74/gobject-introspection-1.74.0.tar.xz
 Summary  : No detailed summary available

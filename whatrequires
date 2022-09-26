@@ -1,7 +1,7 @@
 # This file contains recursive sources that require this package
 appstream-glib
 at-spi2-core
-atk
+compat-gcr-soname1
 compat-gtksourceview-soname3
 compat-libsoup-soname-24
 compat-webkitgtk-soname40
@@ -28,4 +28,5 @@ orca
 tracker
 upower
 webkitgtk
+webkitgtk50
 wireplumber

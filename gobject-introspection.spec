@@ -4,7 +4,7 @@
 #
 Name     : gobject-introspection
 Version  : 1.74.0
-Release  : 56
+Release  : 57
 URL      : https://download.gnome.org/sources/gobject-introspection/1.74/gobject-introspection-1.74.0.tar.xz
 Source0  : https://download.gnome.org/sources/gobject-introspection/1.74/gobject-introspection-1.74.0.tar.xz
 Summary  : No detailed summary available
@@ -99,7 +99,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1664151976
+export SOURCE_DATE_EPOCH=1666732798
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -211,7 +211,7 @@ DESTDIR=%{buildroot} ninja -C builddir install
 %files lib
 %defattr(-,root,root,-)
 /usr/lib64/gobject-introspection/giscanner/__init__.py
-/usr/lib64/gobject-introspection/giscanner/_giscanner.cpython-310-x86_64-linux-gnu.so
+/usr/lib64/gobject-introspection/giscanner/_giscanner.cpython-311-x86_64-linux-gnu.so
 /usr/lib64/gobject-introspection/giscanner/_version.py
 /usr/lib64/gobject-introspection/giscanner/annotationmain.py
 /usr/lib64/gobject-introspection/giscanner/annotationparser.py

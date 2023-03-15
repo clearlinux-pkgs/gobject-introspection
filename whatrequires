@@ -1,5 +1,4 @@
 # This file contains recursive sources that require this package
-appstream-glib
 at-spi2-core
 compat-gcr-soname1
 compat-gtksourceview-soname3

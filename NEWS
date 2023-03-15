@@ -1,3 +1,31 @@
+1.76.0 - 2023-03-13
+-------------------
+
+* Documentation fixes
+* Update the GIR data for GLib
+
+1.75.6 - 2023-02-13
+-------------------
+
+* Documentation fixes
+* Fix build when using GLib as a subproject
+* Update the GIR data for GLib
+
+1.75.4 - 2023-01-09
+-------------------
+
+* Brown-paper bag release to fix the GLib dependency.
+
+1.75.2 - 2023-01-09
+-------------------
+
+* Split 'disguised' attribute into two separate attributes [#101]
+* Add copy/free function annotations for plain-old data types [#14]
+* Include the default value of GObject properties in the GIR data [#4]
+* Drop wrap files for recursive dependencies
+* Add more marshalling tests [Marco Trevisan]
+* Update the GIR data for GLib, GObject, GModule, and GIO [Sebastian Dröge, Rico Tzschichholz]
+
 1.74.0 - 2022-09-17
 -------------------
 

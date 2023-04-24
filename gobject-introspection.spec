@@ -5,7 +5,7 @@
 #
 Name     : gobject-introspection
 Version  : 1.76.1
-Release  : 61
+Release  : 62
 URL      : https://download.gnome.org/sources/gobject-introspection/1.76/gobject-introspection-1.76.1.tar.xz
 Source0  : https://download.gnome.org/sources/gobject-introspection/1.76/gobject-introspection-1.76.1.tar.xz
 Summary  : No detailed summary available
@@ -72,6 +72,7 @@ Summary: lib components for the gobject-introspection package.
 Group: Libraries
 Requires: gobject-introspection-data = %{version}-%{release}
 Requires: gobject-introspection-license = %{version}-%{release}
+Provides: pypi(gi)
 
 %description lib
 lib components for the gobject-introspection package.
@@ -102,7 +103,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1682359696
+export SOURCE_DATE_EPOCH=1682360126
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib

@@ -18,6 +18,7 @@ ibus
 igt-gpu-tools
 libdazzle
 libgudev
+libnice
 librsvg
 libsoup
 libvirt-glib
@@ -27,6 +28,5 @@ orca
 tracker
 upower
 webkitgtk
-webkitgtk50
 webkitgtk60
 wireplumber

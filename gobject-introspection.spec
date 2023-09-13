@@ -4,10 +4,10 @@
 # Using build pattern: meson
 #
 Name     : gobject-introspection
-Version  : 1.76.1
-Release  : 62
-URL      : https://download.gnome.org/sources/gobject-introspection/1.76/gobject-introspection-1.76.1.tar.xz
-Source0  : https://download.gnome.org/sources/gobject-introspection/1.76/gobject-introspection-1.76.1.tar.xz
+Version  : 1.78.0
+Release  : 63
+URL      : https://download.gnome.org/sources/gobject-introspection/1.78/gobject-introspection-1.78.0.tar.xz
+Source0  : https://download.gnome.org/sources/gobject-introspection/1.78/gobject-introspection-1.78.0.tar.xz
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : GPL-2.0 LGPL-2.0
@@ -95,25 +95,30 @@ man components for the gobject-introspection package.
 
 
 %prep
-%setup -q -n gobject-introspection-1.76.1
-cd %{_builddir}/gobject-introspection-1.76.1
+%setup -q -n gobject-introspection-1.78.0
+cd %{_builddir}/gobject-introspection-1.78.0
+pushd ..
+cp -a gobject-introspection-1.78.0 buildavx2
+popd
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1682360126
+export SOURCE_DATE_EPOCH=1694632979
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
-export CFLAGS="$CFLAGS -O3 -Ofast -falign-functions=32 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -fno-semantic-interposition -g1 -gno-column-info -gno-variable-location-views -gz "
-export FCFLAGS="$FFLAGS -O3 -Ofast -falign-functions=32 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -fno-semantic-interposition -g1 -gno-column-info -gno-variable-location-views -gz "
-export FFLAGS="$FFLAGS -O3 -Ofast -falign-functions=32 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -fno-semantic-interposition -g1 -gno-column-info -gno-variable-location-views -gz "
-export CXXFLAGS="$CXXFLAGS -O3 -Ofast -falign-functions=32 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -fno-semantic-interposition -g1 -gno-column-info -gno-variable-location-views -gz "
+export CFLAGS="$CFLAGS -O3 -Ofast -falign-functions=32 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -fno-semantic-interposition -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
+export FCFLAGS="$FFLAGS -O3 -Ofast -falign-functions=32 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -fno-semantic-interposition -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
+export FFLAGS="$FFLAGS -O3 -Ofast -falign-functions=32 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -fno-semantic-interposition -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
+export CXXFLAGS="$CXXFLAGS -O3 -Ofast -falign-functions=32 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -fno-semantic-interposition -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
 CFLAGS="$CFLAGS" CXXFLAGS="$CXXFLAGS" LDFLAGS="$LDFLAGS" meson --libdir=lib64 --prefix=/usr --buildtype=plain   builddir
 ninja -v -C builddir
+CFLAGS="$CFLAGS -m64 -march=x86-64-v3 -Wl,-z,x86-64-v3 -O3" CXXFLAGS="$CXXFLAGS -m64 -march=x86-64-v3 -Wl,-z,x86-64-v3 " LDFLAGS="$LDFLAGS -m64 -march=x86-64-v3" meson --libdir=lib64 --prefix=/usr --buildtype=plain   builddiravx2
+ninja -v -C builddiravx2
 
 %check
 export LANG=C.UTF-8
@@ -127,13 +132,18 @@ mkdir -p %{buildroot}/usr/share/package-licenses/gobject-introspection
 cp %{_builddir}/gobject-introspection-%{version}/COPYING %{buildroot}/usr/share/package-licenses/gobject-introspection/80fe7119545c554233bbac373a7d8b0104e45cd1 || :
 cp %{_builddir}/gobject-introspection-%{version}/COPYING.GPL %{buildroot}/usr/share/package-licenses/gobject-introspection/6e0119fb857bc6287be560fecaf4bcd3f28034bf || :
 cp %{_builddir}/gobject-introspection-%{version}/COPYING.LGPL %{buildroot}/usr/share/package-licenses/gobject-introspection/e963be7b84bc2a5891ab63ff87dc536b7f504695 || :
+DESTDIR=%{buildroot}-v3 ninja -C builddiravx2 install
 DESTDIR=%{buildroot} ninja -C builddir install
+/usr/bin/elf-move.py avx2 %{buildroot}-v3 %{buildroot} %{buildroot}/usr/share/clear/filemap/filemap-%{name}
 
 %files
 %defattr(-,root,root,-)
 
 %files bin
 %defattr(-,root,root,-)
+/V3/usr/bin/g-ir-compiler
+/V3/usr/bin/g-ir-generate
+/V3/usr/bin/g-ir-inspect
 /usr/bin/g-ir-annotation-tool
 /usr/bin/g-ir-compiler
 /usr/bin/g-ir-doc-tool
@@ -214,6 +224,8 @@ DESTDIR=%{buildroot} ninja -C builddir install
 
 %files lib
 %defattr(-,root,root,-)
+/V3/usr/lib64/gobject-introspection/giscanner/_giscanner.cpython-311-x86_64-linux-gnu.so
+/V3/usr/lib64/libgirepository-1.0.so.1.0.0
 /usr/lib64/gobject-introspection/giscanner/__init__.py
 /usr/lib64/gobject-introspection/giscanner/_giscanner.cpython-311-x86_64-linux-gnu.so
 /usr/lib64/gobject-introspection/giscanner/_version.py

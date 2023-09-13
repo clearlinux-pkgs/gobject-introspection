@@ -3,7 +3,7 @@ at-spi2-core
 compat-gcr-soname1
 compat-gtksourceview-soname3
 compat-libsoup-soname-24
-compat-webkitgtk-soname40
+fprintd
 gcr
 gdk-pixbuf
 gexiv2

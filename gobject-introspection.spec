@@ -7,7 +7,7 @@
 #
 Name     : gobject-introspection
 Version  : 1.78.1
-Release  : 66
+Release  : 67
 URL      : https://download.gnome.org/sources/gobject-introspection/1.78/gobject-introspection-1.78.1.tar.xz
 Source0  : https://download.gnome.org/sources/gobject-introspection/1.78/gobject-introspection-1.78.1.tar.xz
 Summary  : No detailed summary available
@@ -108,7 +108,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1710885426
+export SOURCE_DATE_EPOCH=1710886209
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -169,6 +169,7 @@ rm -f %{buildroot}*/usr/lib64/girepository-1.0/Gio-2.0.typelib
 rm -f %{buildroot}*/usr/share/gir-1.0/GLib-2.0.gir
 rm -f %{buildroot}*/usr/share/gir-1.0/GModule-2.0.gir
 rm -f %{buildroot}*/usr/share/gir-1.0/GObject-2.0.gir
+rm -f %{buildroot}*/usr/share/gir-1.0/Gio-2.0.gir
 /usr/bin/elf-move.py avx2 %{buildroot}-v3 %{buildroot} %{buildroot}/usr/share/clear/filemap/filemap-%{name}
 
 %files

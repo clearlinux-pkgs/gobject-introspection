@@ -7,7 +7,7 @@
 #
 Name     : gobject-introspection
 Version  : 1.82.0
-Release  : 71
+Release  : 72
 URL      : https://download.gnome.org/sources/gobject-introspection/1.82/gobject-introspection-1.82.0.tar.xz
 Source0  : https://download.gnome.org/sources/gobject-introspection/1.82/gobject-introspection-1.82.0.tar.xz
 Summary  : No detailed summary available

@@ -23,7 +23,6 @@ librsvg
 libsoup
 libvirt-glib
 lightdm
-nautilus
 orca
 tracker
 tracker-miners
